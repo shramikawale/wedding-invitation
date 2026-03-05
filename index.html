@@ -4,40 +4,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wedding Invitation</title>
+
+<!-- ❤️ Browser Tab Icon -->
+<link rel="icon" type="image/png" href="favicon.png">
+
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- Floating Hearts -->
+<div class="hearts">
+  <span>❤️</span>
+  <span>💖</span>
+  <span>💕</span>
+  <span>💗</span>
+  <span>❤️</span>
+</div>
+
 <div class="container">
 
 <h1>💍 You're Invited</h1>
-<h2>Shramik ❤️ Pooza</h2>
 
-<p class="date">December 12, 2026</p>
+<h2 class="couple">
+<span>Shramik</span>
+<span class="love">❤️</span>
+<span>Pooza</span>
+</h2>
+
+<p class="date">📅 December 12, 2026</p>
 
 <!-- GIF Preview -->
 <div class="gif-container">
 <img src="demo.gif" id="gifPreview" alt="Wedding Demo">
-<p class="tap-text">Tap to watch video</p>
+<p class="tap-text">❤️ Tap to watch our love story ❤️</p>
 </div>
 
 <p class="message">
-We are excited to celebrate our special day with you ❤️
+With joyful hearts, we invite you to celebrate our special day 💖
 </p>
 
 </div>
 
 <!-- Video Popup -->
 <div id="videoModal" class="modal">
-
 <span class="close">&times;</span>
-
 <video id="weddingVideo" controls>
 <source src="wedding-video.mp4" type="video/mp4">
 </video>
-
 </div>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
 
 <script src="script.js"></script>
 
