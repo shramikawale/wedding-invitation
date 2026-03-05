@@ -1,29 +1,76 @@
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+text-align:center;
 }
 
 .container{
-    text-align:center;
-    background:white;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+padding:30px;
+background:white;
+border-radius:15px;
+max-width:500px;
+width:90%;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
-.video-preview img{
-    width:100%;
-    max-width:600px;
-    border-radius:12px;
-    margin-top:20px;
+h1{
+font-size:32px;
+color:#c94f7c;
+}
+
+.date{
+font-size:20px;
+margin-bottom:20px;
+}
+
+.gif-container img{
+width:100%;
+border-radius:10px;
+cursor:pointer;
+}
+
+.tap-text{
+font-size:14px;
+color:#777;
+margin-top:8px;
 }
 
 .message{
-    margin-top:20px;
-    font-size:18px;
+margin-top:20px;
+font-size:16px;
+}
+
+/* Popup modal */
+
+.modal{
+display:none;
+position:fixed;
+z-index:1000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+}
+
+.modal video{
+width:90%;
+max-width:700px;
+border-radius:10px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:40px;
+color:white;
+cursor:pointer;
 }
