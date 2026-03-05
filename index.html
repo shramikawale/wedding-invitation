@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wedding Invitation</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -10,16 +11,35 @@
 
 <div class="container">
 
-<h1>💍 Our Wedding Invitation</h1>
-<p>Welcome to our special moment</p>
+<h1>💍 You're Invited</h1>
+<h2>Shramik & Pooza</h2>
 
-<div class="video-preview">
-    <img src="demo.gif" alt="Wedding Invitation Demo">
+<p class="date">December 12, 2026</p>
+
+<!-- GIF Preview -->
+<div class="gif-container">
+<img src="demo.gif" id="gifPreview" alt="Wedding Demo">
+<p class="tap-text">Tap to watch video</p>
 </div>
 
-<p class="message">We are excited to share our big day with you ❤️</p>
+<p class="message">
+We are excited to celebrate our special day with you ❤️
+</p>
 
 </div>
+
+<!-- Video Popup -->
+<div id="videoModal" class="modal">
+
+<span class="close">&times;</span>
+
+<video id="weddingVideo" controls>
+<source src="wedding-video.mp4" type="video/mp4">
+</video>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
