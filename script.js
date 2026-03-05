@@ -1,6 +1,9 @@
-// Play music when user clicks anywhere (browser required)
+// Play music when user taps anywhere (mobile optimized)
 
-document.addEventListener("click", function () {
+document.addEventListener("touchstart", playMusic, { once: true });
+document.addEventListener("click", playMusic, { once: true });
+
+function playMusic() {
   const music = document.getElementById("bgMusic");
   music.play();
-}, { once: true });
+}
