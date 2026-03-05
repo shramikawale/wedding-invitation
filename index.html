@@ -1,36 +1,135 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wedding Video</title>
+<title>Wedding Invitation</title>
+
 <style>
-body{
+
+/* ===== GLOBAL ===== */
+
+*{
 margin:0;
-background:black;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#000;
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
+overflow:hidden;
+font-family:Arial, sans-serif;
+}
+
+/* ===== VIDEO CONTAINER ===== */
+
+.video-container{
+position:relative;
+width:100%;
+max-width:1000px;
 }
 
 video{
 width:100%;
-max-width:900px;
-} </style>
+height:auto;
+border-radius:12px;
+display:block;
+}
 
+/* ===== CUSTOM PLAY BUTTON ===== */
+
+.play-button{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:rgba(255,255,255,0.9);
+color:#000;
+font-size:45px;
+width:90px;
+height:90px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+cursor:pointer;
+transition:0.3s ease;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.play-button:hover{
+transform:translate(-50%,-50%) scale(1.15);
+background:#fff;
+}
+
+/* Hide button after click */
+.hide{
+display:none;
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+
+@media(max-width:600px){
+.play-button{
+width:70px;
+height:70px;
+font-size:30px;
+}
+}
+
+</style>
 </head>
 <body>
 
-<video controls autoplay>
+<div class="video-container">
+
+<!-- VIDEO -->
+<video id="weddingVideo" preload="auto">
 <source src="wedding-video.mp4" type="video/mp4">
-Your browser does not support the video tag.
+Your browser does not support video.
 </video>
 
-<audio autoplay loop>
+<!-- PLAY BUTTON -->
+<div class="play-button" id="playBtn">
+▶
+</div>
+
+</div>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bgMusic" loop>
 <source src="music.mp3" type="audio/mp3">
 </audio>
+
+<script>
+
+/* ===== ELEMENTS ===== */
+
+const video = document.getElementById("weddingVideo");
+const music = document.getElementById("bgMusic");
+const playBtn = document.getElementById("playBtn");
+
+/* ===== PLAY ON CLICK ===== */
+
+playBtn.addEventListener("click", function(){
+
+video.play();
+music.play();
+playBtn.classList.add("hide");
+
+});
+
+/* Optional: Hide button if video already playing */
+
+video.addEventListener("play", function(){
+playBtn.classList.add("hide");
+});
+
+</script>
 
 </body>
 </html>
