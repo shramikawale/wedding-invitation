@@ -1,1 +1,38 @@
-<video id="weddingVideo" preload="auto" playsinline>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Video</title>
+
+<style>
+body{
+margin:0;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+video{
+width:100%;
+max-width:1000px;
+border-radius:10px;
+}
+</style>
+
+</head>
+<body>
+
+<video id="weddingVideo" preload="auto" playsinline controls>
+<source src="./wedding-video.mp4" type="video/mp4">
+Your browser does not support video.
+</video>
+
+<audio loop autoplay>
+<source src="./music.mp3" type="audio/mp3">
+</audio>
+
+</body>
+</html>
