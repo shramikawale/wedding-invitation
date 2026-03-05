@@ -1,21 +1,19 @@
+// Open Video Popup
 const gif = document.getElementById("gifPreview");
 const modal = document.getElementById("videoModal");
 const closeBtn = document.querySelector(".close");
-const video = document.getElementById("weddingVideo");
 
-gif.onclick = function(){
+gif.addEventListener("click", () => {
 modal.style.display = "flex";
-video.play();
-}
+});
 
-closeBtn.onclick = function(){
+// Close Video
+closeBtn.addEventListener("click", () => {
 modal.style.display = "none";
-video.pause();
-}
+});
 
-window.onclick = function(e){
-if(e.target == modal){
-modal.style.display = "none";
-video.pause();
-}
-}
+// Play Music When User Clicks Anywhere
+document.body.addEventListener("click", function(){
+const music = document.getElementById("bgMusic");
+music.play();
+}, { once: true });
