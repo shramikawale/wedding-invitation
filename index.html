@@ -1,56 +1,36 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wedding Invitation</title>
+<title>Wedding Video</title>
+<style>
+body{
+margin:0;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
 
-<!-- ❤️ Browser Tab Icon -->
-<link rel="icon" type="image/png" href="favicon.png">
+video{
+width:100%;
+max-width:900px;
+} </style>
 
-<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="container">
-
-<h1>💍 You're Invited</h1>
-
-<h2 class="couple">
-<span>Shramik</span>
-<span class="love">❤️</span>
-<span>Pooza</span>
-</h2>
-
-<p class="date">📅 March 14th, 2026</p>
-
-<!-- GIF Preview -->
-<div class="gif-container">
-<img src="demo.gif" id="gifPreview" alt="Wedding Demo">
-<p class="tap-text">❤️ Tap to watch our love story ❤️</p>
-</div>
-
-<p class="message">
-With joyful hearts, we invite you to celebrate our special day. 💖
-</p>
-
-</div>
-
-<!-- Video Popup -->
-<div id="videoModal" class="modal">
-<span class="close">&times;</span>
-<video id="weddingVideo" controls>
+<video controls autoplay>
 <source src="wedding-video.mp4" type="video/mp4">
+Your browser does not support the video tag.
 </video>
-</div>
 
-<!-- Background Music -->
-<audio id="bgMusic" loop>
+<audio autoplay loop>
 <source src="music.mp3" type="audio/mp3">
 </audio>
-
-<script src="script.js"></script>
 
 </body>
 </html>
