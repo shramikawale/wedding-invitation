@@ -1,11 +1,27 @@
 const music = document.getElementById("bgMusic");
 
-/* 🎵 Start Music on Tap */
-document.addEventListener("click", () => {
-  music.play();
-}, { once: true });
+/* =================================================
+   🎵 AUTO PLAY MUSIC (Best Browser Compatible Way)
+================================================= */
 
-/* 🌸 Create Falling Petals */
+window.addEventListener("load", async () => {
+  try {
+    await music.play();
+  } catch (err) {
+    // Autoplay blocked → wait for user interaction
+    document.addEventListener("click", playMusicOnce, { once: true });
+    document.addEventListener("touchstart", playMusicOnce, { once: true });
+  }
+});
+
+function playMusicOnce() {
+  music.play();
+}
+
+/* =================================================
+   🌸 CREATE FALLING ROSE PETALS
+================================================= */
+
 const petalContainer = document.querySelector(".petals");
 
 function createPetal() {
@@ -19,17 +35,18 @@ function createPetal() {
 
   petalContainer.appendChild(petal);
 
-  setTimeout(() => {
-    petal.remove();
-  }, 10000);
+  setTimeout(() => petal.remove(), 10000);
 }
 
 setInterval(createPetal, 300);
 
-/* 💖 Hearts + ✨ Sparkles On Touch */
+/* =================================================
+   💖 HEARTS + ✨ SPARKLES ON TOUCH
+================================================= */
+
 document.addEventListener("click", function (e) {
 
-  // Heart at tap position
+  // 💖 Heart
   const heart = document.createElement("div");
   heart.innerHTML = "💖";
   heart.classList.add("tap-heart");
@@ -38,19 +55,17 @@ document.addEventListener("click", function (e) {
   heart.style.top = e.clientY + "px";
 
   document.body.appendChild(heart);
-
   setTimeout(() => heart.remove(), 1000);
 
-  // Sparkles
-  for (let i = 0; i < 5; i++) {
+  // ✨ Sparkles
+  for (let i = 0; i < 6; i++) {
     const sparkle = document.createElement("div");
     sparkle.classList.add("sparkle");
 
-    sparkle.style.left = (e.clientX + (Math.random()*20 - 10)) + "px";
-    sparkle.style.top = (e.clientY + (Math.random()*20 - 10)) + "px";
+    sparkle.style.left = (e.clientX + (Math.random() * 20 - 10)) + "px";
+    sparkle.style.top = (e.clientY + (Math.random() * 20 - 10)) + "px";
 
     document.body.appendChild(sparkle);
-
     setTimeout(() => sparkle.remove(), 800);
   }
 
